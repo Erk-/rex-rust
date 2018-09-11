@@ -50,7 +50,6 @@ impl Arlo {
     pub fn stop(&mut self) -> String {
         self.send_command("s\n", None)
     }
-
 }
 
 impl Drop for Arlo {
