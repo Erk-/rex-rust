@@ -1,0 +1,1 @@
+{"rustc":8427573639476503995,"features":"[]","target":9958516957280489004,"profile":7990393541957723157,"path":6232969218573722577,"deps":[["bitflags v0.9.1","bitflags",7543620009796062120],["libudev v0.2.0","libudev",12351925096674643163],["nix v0.10.0","nix",7841434417817640860]],"local":[{"Precalculated":"3.0.0"}],"rustflags":[],"edition":"Edition2015"}

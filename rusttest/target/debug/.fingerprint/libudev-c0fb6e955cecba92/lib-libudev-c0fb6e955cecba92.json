@@ -1,0 +1,1 @@
+{"rustc":8427573639476503995,"features":"[]","target":2576547555302216656,"profile":7990393541957723157,"path":18146112186611567910,"deps":[["libc v0.2.43","libc",6126940696081983990],["libudev-sys v0.1.4","libudev_sys",2261807475499712466]],"local":[{"Precalculated":"0.2.0"}],"rustflags":[],"edition":"Edition2015"}

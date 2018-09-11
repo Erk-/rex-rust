@@ -1,0 +1,7 @@
+[package]
+name = "rex-ucph"
+version = "0.1.0"
+authors = ["Valdemar Erk <v@erk.io>"]
+
+[dependencies]
+serialport = "^3.0.0"
