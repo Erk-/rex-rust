@@ -2,6 +2,7 @@
 name = "rex-ucph"
 version = "0.1.0"
 authors = ["Valdemar Erk <valdemar@erk.io>"]
+reporsitory = "https://github.com/Erk-/rex-rust"
 
 [dependencies]
 serialport = "^3.0.0"
