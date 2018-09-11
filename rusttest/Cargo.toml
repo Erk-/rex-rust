@@ -4,4 +4,4 @@ version = "0.1.0"
 authors = ["Valdemar Erk <v@erk.io>"]
 
 [dependencies]
-rex-ucph = {path = "../rex-ucph"}
+rex-ucph = {path = "/home/erk/Dokumenter/REX/rex-rust/rex-ucph"}
