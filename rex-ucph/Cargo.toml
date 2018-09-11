@@ -1,6 +1,6 @@
 [package]
 name = "rex-ucph"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Valdemar Erk <valdemar@erk.io>"]
 documentation = "https://docs.rs/rex-ucph" 
 description = "This is a library for the ARLO robots in use in the REX course at UCPH"
