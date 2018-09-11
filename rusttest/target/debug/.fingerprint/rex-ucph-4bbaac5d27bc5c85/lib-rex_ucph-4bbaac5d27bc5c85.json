@@ -1,1 +1,0 @@
-{"rustc":8427573639476503995,"features":"[]","target":2021895633167778071,"profile":15470477436572453513,"path":7688938610364820339,"deps":[["serialport v3.0.0","serialport",5968736004323114094]],"local":[{"MtimeBased":[[1536312834,542328215],".fingerprint/rex-ucph-4bbaac5d27bc5c85/dep-lib-rex_ucph-4bbaac5d27bc5c85"]}],"rustflags":[],"edition":"Edition2015"}
