@@ -63,11 +63,10 @@ impl Arlo {
         let conn: &mut TTYPort = &mut self.connection;
         conn.write(cmd.as_bytes()).expect("Write failed");
         thread::sleep(time::Duration::from_millis(wait));
-        let mut buf = Vec::<u8>::new();
         let mut reader = BufReader::new(conn);
         let mut line = String::new();
-        let len = reader.read_line(&mut line).expect("Read failed");
-        //println!("line: {}, len: {}", line.trim(), len);
+        let _len = reader.read_line(&mut line).expect("Read failed");
+        //println!("line: {}, len: {}", line.trim(), _len);
         line.trim().to_string()
     }
 
