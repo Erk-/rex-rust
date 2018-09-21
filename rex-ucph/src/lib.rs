@@ -54,19 +54,21 @@ impl Arlo {
 
     /// Sends a command to the Arduino robot controller
     fn send_command(&mut self, cmd: &str, sleep: Option<u64>) -> String {
+        use std::io::BufReader;
+        use std::io::BufRead;
         let wait = match sleep {
             Some(n) => n,
             None => 0,
         };
         let conn: &mut TTYPort = &mut self.connection;
-        conn.write(cmd.as_bytes()).unwrap();
+        conn.write(cmd.as_bytes()).expect("Write failed");
         thread::sleep(time::Duration::from_millis(wait));
         let mut buf = Vec::<u8>::new();
-        let retval = match conn.read(buf.as_mut_slice()) {
-            Ok(_t) => String::from_utf8(buf).unwrap(),
-            Err(e) => panic!("Reason: {}", e),
-        };
-        retval
+        let mut reader = BufReader::new(conn);
+        let mut line = String::new();
+        let len = reader.read_line(&mut line).expect("Read failed");
+        //println!("line: {}, len: {}", line.trim(), len);
+        line.trim().to_string()
     }
 
     /// Start left motor with motor power powerLeft (in [0;127]) and direction dirLeft (0=reverse, 1=forward)
@@ -168,6 +170,7 @@ impl Arlo {
     fn read_sensor(&mut self, sensor_id: u8) -> Result<usize, ()> {
         let cmd = format!("{}\n", sensor_id);
         let return_value = self.send_command(&cmd, None).parse::<usize>().map_err(|_| ())?;
+        //println!("Ret: {}", return_value);
         if return_value <= 0 {
             Err(())
         } else {
