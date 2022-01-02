@@ -1,5 +1,4 @@
-//! rex-ucph is a libary for the Arlo robots in use in the
-//! rex course on University of Copenhagen
+#![doc = include_str!("../README.md")]
 
 extern crate serialport;
 
@@ -70,8 +69,10 @@ impl Arlo {
         line.trim().to_string()
     }
 
-    /// Start left motor with motor power powerLeft (in [0;127]) and direction dirLeft (0=reverse, 1=forward)
-    /// and right motor with motor power powerRight (in [0;127]) and direction dirRight (0=reverse, 1=forward).
+    /// Start left motor with motor power powerLeft (in \[0;127\]) and
+    /// direction dirLeft (0=reverse, 1=forward) and right motor with
+    /// motor power powerRight (in ª[0;127\]) and direction dirRight
+    /// (0=reverse, 1=forward).
     ///       
     /// NOTE: Does NOT use wheel encoders.
     pub fn go_diff(&mut self, power_left: u8, power_right: u8, dir_left: u8, dir_right: u8) -> String {
@@ -176,26 +177,26 @@ impl Arlo {
             Ok(return_value)
         }
     }
-    /// Read the front sonar ping sensor and return the measured range in milimeters [mm]
+    /// Read the front sonar ping sensor and return the measured range in milimeters \[mm\]
     pub fn read_front_ping_sensor(&mut self) -> Result<usize, ()> {
         self.read_sensor(0)
     }
 
-    /// Read the back sonar ping sensor and return the measured range in milimeters [mm]
+    /// Read the back sonar ping sensor and return the measured range in milimeters \[mm\]
     pub fn read_back_ping_sensor(&mut self) -> Result<usize, ()> {
         self.read_sensor(1)
     }
-    /// Read the left sonar ping sensor and return the measured range in milimeters [mm]
+    /// Read the left sonar ping sensor and return the measured range in milimeters \[mm\]
     pub fn read_left_ping_sensor(&mut self) -> Result<usize, ()> {
         self.read_sensor(2)
     }
 
-    /// Read the right sonar ping sensor and return the measured range in milimeters [mm]
+    /// Read the right sonar ping sensor and return the measured range in milimeters \[mm\]
     pub fn read_right_ping_sensor(&mut self) -> Result<usize, ()> {
         self.read_sensor(3)
     }
 
-    /// Speed must be a value in the range [0; 255]. This speed is used in commands based on 
+    /// Speed must be a value in the range \[0; 255\]. This speed is used in commands based on 
     /// using the wheel encoders.
     pub fn set_speed(&mut self, speed: u8) -> String {
         self.speed = Some(speed);
@@ -203,7 +204,7 @@ impl Arlo {
         self.send_command(&cmd, None)
     }
 
-    /// Turnspeed must be a value in the range [0; 255]. This speed is used in commands based on 
+    /// Turnspeed must be a value in the range \[0; 255\]. This speed is used in commands based on 
     /// using the wheel encoders.
     pub fn set_turnspeed(&mut self, turn_speed: u8) -> String {
         self.turn_speed = Some(turn_speed);

@@ -1,11 +1,12 @@
 [package]
 name = "rex-ucph"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Valdemar Erk <valdemar@erk.io>"]
 documentation = "https://docs.rs/rex-ucph" 
 description = "This is a library for the ARLO robots in use in the REX course at UCPH"
 repository = "https://github.com/Erk-/rex-rust"
 license = "ISC"
+include = ["src/*.rs", "README.md"]
 
 [dependencies]
 serialport = "^3.0.0"
